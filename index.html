@@ -236,6 +236,53 @@
     .founder-booking-badge{ position:fixed; bottom:24px; right:24px; z-index:9999; display:flex; align-items:center; gap:8px; padding:12px 20px; background:rgba(17,17,19,0.9); color:#fff; border:1px solid var(--border); border-radius:14px; cursor:pointer; font-family:inherit; font-size:14px; font-weight:600; box-shadow:0 8px 32px rgba(0,0,0,0.4); transition:all 0.3s; text-decoration:none; backdrop-filter:blur(12px); }
     .founder-booking-badge:hover{ transform:translateY(-2px); box-shadow:0 12px 40px rgba(0,0,0,0.5); border-color:rgba(14,165,233,0.2); color:#fff; }
     .founder-booking-badge svg{ width:18px; height:18px; flex-shrink:0; }
+  
+    /* ── Aha Morphing Animation ── */
+    .aha-wrap{max-width:900px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,0.5);background:#111113;}
+    .aha-chrome{background:#161618;padding:0.6rem 1rem;display:flex;align-items:center;gap:0.75rem;border-bottom:1px solid var(--border);}
+    .aha-dots span{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px;}
+    .aha-status{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.7rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:8px;transition:all 0.6s ease;}
+    .aha-status.pain{background:rgba(239,68,68,0.12);color:#ef4444;}
+    .aha-status.syncing{background:rgba(168,85,247,0.12);color:#a855f7;}
+    .aha-status.done{background:rgba(34,197,94,0.12);color:#22c55e;}
+    .aha-body{padding:1.5rem 1.5rem 1rem;position:relative;}
+    .aha-caption{text-align:center;padding:0.75rem 0 1rem;font-size:1.1rem;font-weight:700;transition:all 0.5s ease;min-height:2.5rem;}
+    .aha-form{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;transition:all 0.8s ease;}
+    .aha-field{padding:0.6rem 0.75rem;border-radius:8px;font-size:0.75rem;font-family:'JetBrains Mono',monospace;transition:all 0.8s ease;position:relative;overflow:hidden;}
+    .aha-field-label{font-size:0.55rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem;transition:color 0.6s ease;}
+    .aha-field-value{font-size:0.8rem;font-weight:500;transition:color 0.6s ease;}
+    .aha-field.full{grid-column:1/-1;}
+    .aha-form.state-pain .aha-field{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);}
+    .aha-form.state-pain .aha-field-label{color:rgba(239,68,68,0.6);}
+    .aha-form.state-pain .aha-field-value{color:var(--text-muted);}
+    .aha-form.state-pain .aha-field.has-error{border-color:#ef4444;box-shadow:0 0 0 1px rgba(239,68,68,0.3);}
+    .aha-form.state-pain .aha-field.has-error .aha-field-value{color:#ef4444;text-decoration:line-through;}
+    .aha-form.state-syncing .aha-field{background:rgba(168,85,247,0.05);border:1px solid rgba(168,85,247,0.15);}
+    .aha-form.state-syncing .aha-field-label{color:rgba(168,85,247,0.6);}
+    .aha-form.state-syncing .aha-field-value{color:#a855f7;}
+    .aha-form.state-done .aha-field{background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.18);}
+    .aha-form.state-done .aha-field-label{color:rgba(34,197,94,0.6);}
+    .aha-form.state-done .aha-field-value{color:var(--text-primary);}
+    .aha-form.state-done .aha-field.has-error{border-color:rgba(34,197,94,0.18);box-shadow:none;}
+    .aha-form.state-done .aha-field.has-error .aha-field-value{color:var(--text-primary);text-decoration:none;}
+    .aha-scan{height:2px;background:transparent;margin:0.75rem 0 0;border-radius:2px;overflow:hidden;position:relative;}
+    .aha-scan-bar{position:absolute;top:0;left:0;width:0;height:100%;border-radius:2px;transition:width 1.2s ease-in-out;}
+    .aha-timer-strip{display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:0.75rem;padding:0.5rem 0;font-family:'JetBrains Mono',monospace;font-size:0.75rem;transition:all 0.5s ease;min-height:2rem;}
+    @media (max-width:600px){.aha-form{grid-template-columns:1fr;}}
+
+    /* ── Logical Closer ── */
+    .closer-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:900px;margin:0 auto;}
+    .closer-card{border-radius:16px;padding:2rem 1.75rem;}
+    .closer-card-old{background:rgba(239,68,68,0.03);border:1px solid rgba(239,68,68,0.12);}
+    .closer-card-new{background:rgba(34,197,94,0.03);border:1px solid rgba(34,197,94,0.15);}
+    .closer-label{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;font-family:'JetBrains Mono',monospace;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.5rem;}
+    .closer-item{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:1.15rem;}
+    .closer-item:last-child{margin-bottom:0;}
+    .closer-icon{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+    .closer-icon-x{background:rgba(239,68,68,0.1);}
+    .closer-icon-check{background:rgba(34,197,94,0.1);}
+    @media (max-width:700px){.closer-grid{grid-template-columns:1fr;}}
+
   </style>
 </head>
 <body>
@@ -396,6 +443,165 @@
       </div>
     </div>
   </section>
+
+  <!-- AHA MOMENT — Live UI Morphing Animation -->
+  <section id="aha-section" style="padding:2rem 0 4rem;">
+    <div class="container">
+      <p class="section-label reveal">See it in action</p>
+      <h2 class="section-title reveal" style="margin-bottom:2rem;">
+        From <span class="gradient-text">spreadsheet tracking</span> to done in seconds.
+      </h2>
+      <div class="aha-wrap reveal-scale">
+        <div class="aha-chrome">
+          <div class="aha-dots">
+            <span style="background:#ef4444;"></span>
+            <span style="background:#eab308;"></span>
+            <span style="background:#22c55e;"></span>
+          </div>
+          <div id="aha-status" class="aha-status pain">Manual Check</div>
+        </div>
+        <div class="aha-body">
+          <div id="aha-caption" class="aha-caption" style="color:#ef4444;">Checking USCIS case status website for each client...</div>
+          <div id="aha-form" class="aha-form state-pain">
+            <div class="aha-field">
+              <div class="aha-field-label">Case Number</div>
+              <div class="aha-field-value" data-pain="WAC-26-...(looking up)" data-done="WAC-26-123-45678 — H-1B">WAC-26-...(looking up)</div>
+            </div>
+            <div class="aha-field has-error">
+              <div class="aha-field-label">Petitioner</div>
+              <div class="aha-field-value" data-pain="TechCo Inc... or TechCorp?" data-done="TechCorp Inc. — EIN verified">TechCo Inc... or TechCorp?</div>
+            </div>
+            <div class="aha-field">
+              <div class="aha-field-label">Beneficiary</div>
+              <div class="aha-field-value" data-pain="Raj P... (checking I-129)" data-done="Rajesh Patel �� Priority Date: Jan 12">Raj P... (checking I-129)</div>
+            </div>
+            <div class="aha-field">
+              <div class="aha-field-label">Current Status</div>
+              <div class="aha-field-value" data-pain="(loading USCIS site...)" data-done="RFE Issued — Response due May 3">(loading USCIS site...)</div>
+            </div>
+            <div class="aha-field full has-error">
+              <div class="aha-field-label">Filing Deadline</div>
+              <div class="aha-field-value" data-pain="(checking calendar...)" data-done="⚠ 9 days remaining — May 3, 2026">(checking calendar...)</div>
+            </div>
+            <div class="aha-field full">
+              <div class="aha-field-label">Documents Needed</div>
+              <div class="aha-field-value" data-pain="(reading RFE letter...)" data-done="Specialty occupation evidence + wage docs">(reading RFE letter...)</div>
+            </div>
+            <div class="aha-field full">
+              <div class="aha-field-label">PERM Status</div>
+              <div class="aha-field-value" data-pain="(separate spreadsheet...)" data-done="ETA #A-26-12345 — Audit cleared">(separate spreadsheet...)</div>
+            </div>
+            <div class="aha-field full">
+              <div class="aha-field-label">Next Action</div>
+              <div class="aha-field-value" data-pain="(add to task list... tomorrow)" data-done="RFE response draft due Apr 28 — assigned">(add to task list... tomorrow)</div>
+            </div>
+          </div>
+          <div class="aha-scan"><div id="aha-scan-bar" class="aha-scan-bar"></div></div>
+          <div id="aha-timer" class="aha-timer-strip" style="color:#ef4444;">
+            <span id="aha-timer-text">~2 hours for 50 cases</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGICAL CLOSER — Old Way vs. New Way -->
+  <section style="padding:4rem 0 5rem;">
+    <div class="container">
+      <p class="section-label reveal">Why switch</p>
+      <h2 class="section-title reveal" style="margin-bottom:2.5rem;">
+        The old way vs. <span class="gradient-text">the ImmigrationTrack way.</span>
+      </h2>
+      <div class="closer-grid">
+        <div class="closer-card closer-card-old reveal reveal-delay-1">
+          <div class="closer-label" style="color:#ef4444;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            The Old Way
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-x">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Manual USCIS status checks</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Paralegals log into USCIS case status pages one-by-one. With 40+ active cases, it takes hours every week.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-x">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Deadline spreadsheets go stale</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">RFE response windows, PERM deadlines, and priority dates tracked in spreadsheets that nobody updates on time.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-x">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Clients call asking for updates</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">You don't know the status until you check manually, so every client call starts with "let me look into that."</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-x">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Missed RFE windows</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">An RFE buried in email means a missed 30-day response window — and a denied petition.</p>
+            </div>
+          </div>
+        </div>
+        <div class="closer-card closer-card-new reveal reveal-delay-2">
+          <div class="closer-label" style="color:#22c55e;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            With ImmigrationTrack
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-check">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Auto-synced case status dashboard</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Every case pulls live status from USCIS. One dashboard, zero manual checks.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-check">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Automated deadline alerts</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">RFE windows, PERM deadlines, and priority dates trigger alerts before they expire.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-check">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Client-ready status page</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Share a live link with clients so they can check status themselves — fewer inbound calls.</p>
+            </div>
+          </div>
+          <div class="closer-item">
+            <div class="closer-icon closer-icon-check">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p style="margin:0;font-size:0.9rem;font-weight:600;color:var(--text-primary);">Full case timeline in one place</p>
+              <p style="margin:0.25rem 0 0;font-size:0.8rem;color:var(--text-muted);">Every filing, receipt, RFE, and approval logged automatically. No more digging through emails.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 
   <!-- ═══════════════════════════════════════════
        FOUNDER CREDIBILITY
@@ -962,6 +1168,84 @@
         Calendly.initPopupWidget({ url: 'https://calendly.com/leanaistudio/founder-call?utm_source=immigrationtrack&utm_medium=lp&utm_campaign=founder-call' });
       }
     }
+  
+    /* ── Aha Morphing Animation ── */
+    (function() {
+      var form = document.getElementById('aha-form');
+      var status = document.getElementById('aha-status');
+      var caption = document.getElementById('aha-caption');
+      var scanBar = document.getElementById('aha-scan-bar');
+      var timer = document.getElementById('aha-timer');
+      var timerText = document.getElementById('aha-timer-text');
+      if (!form || !status) return;
+      var fields = form.querySelectorAll('.aha-field-value');
+      var section = document.getElementById('aha-section');
+      var started = false;
+      function runCycle() {
+        form.className = 'aha-form state-pain';
+        status.className = 'aha-status pain';
+        status.textContent = 'Manual Check';
+        caption.style.color = '#ef4444';
+        caption.textContent = 'Checking USCIS case status website for each client...';
+        scanBar.style.width = '0';
+        scanBar.style.background = 'transparent';
+        timer.style.color = '#ef4444';
+        timerText.textContent = '~2 hours for 50 cases';
+        fields.forEach(function(f) { f.textContent = f.dataset.pain; });
+        setTimeout(function() {
+          form.className = 'aha-form state-syncing';
+          status.className = 'aha-status syncing';
+          status.textContent = 'AI Syncing...';
+          caption.style.color = '#a855f7';
+          caption.textContent = 'ImmigrationTrack pulling latest case statuses...';
+          scanBar.style.background = 'linear-gradient(90deg, #a855f7, #8b5cf6)';
+          scanBar.style.width = '100%';
+          timer.style.color = '#a855f7';
+          timerText.textContent = 'Syncing cases...';
+        }, 3000);
+        setTimeout(function() {
+          fields.forEach(function(f, i) {
+            setTimeout(function() { f.textContent = f.dataset.done; }, i * 150);
+          });
+        }, 4500);
+        setTimeout(function() {
+          form.className = 'aha-form state-done';
+          status.className = 'aha-status done';
+          status.textContent = 'Done in 10s';
+          caption.style.color = '#22c55e';
+          caption.textContent = 'All 47 cases synced. 2 RFEs detected. Deadlines updated.';
+          scanBar.style.background = 'linear-gradient(90deg, #22c55e, #16a34a)';
+          timer.style.color = '#22c55e';
+          timerText.textContent = '10 seconds — 47 cases current';
+        }, 6000);
+        setTimeout(function() { runCycle(); }, 10000);
+      }
+      var ahaObs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting && !started) {
+          started = true;
+          runCycle();
+          ahaObs.unobserve(section);
+        }
+      }, { threshold: 0.3 });
+      ahaObs.observe(section);
+    })();
+
   </script>
+
+<!-- DKI: Dynamic Keyword Insertion — replaces hero H1 with ?headline= param -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var params = new URLSearchParams(window.location.search);
+  var hl = params.get('headline');
+  if (hl) {
+    var h1 = document.querySelector('h1.reveal.reveal-delay-1') || document.querySelector('section h1') || document.querySelector('h1');
+    if (h1) {
+      h1.setAttribute('data-default-headline', h1.innerHTML);
+      h1.textContent = decodeURIComponent(hl.replace(/\+/g, ' '));
+    }
+  }
+});
+</script>
+
 </body>
 </html>
